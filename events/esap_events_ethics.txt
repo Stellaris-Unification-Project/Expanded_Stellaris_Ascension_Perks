@@ -62,10 +62,7 @@ country_event = {
 					modifier = {
 						factor = 0
 						owner = {
-							NOR = {
-								has_ethic = ethic_spiritualist
-								has_ethic = ethic_fanatic_spiritualist
-							}
+							is_spiritualist = no
 						}
 					}
 					add_ruler_trait = leader_trait_ruler_esap_egalitarian_2_pious 

@@ -277,10 +277,7 @@ ap_the_flesh_is_weak = {
 		factor = 20
 		modifier = {
 			factor = 0.1
-			NOR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = no
 		}
 		modifier = {
 			factor = 0
@@ -473,10 +470,7 @@ ap_mind_over_matter = {
 		factor = 20
 		modifier = {
 			factor = 0.1
-			NOR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-			}
+			is_spiritualist = no
 		}	
 		modifier = {
 			factor = 0
@@ -1192,12 +1186,12 @@ ap_esap_gov_3 = {
 	}
 
 	potential = {
-		NOT = {
+		NOR = {
 			has_ethic = ethic_gestalt_consciousness
 			has_ascension_perk = ap_imperial_prerogative
 			has_ascension_perk = ap_esap_gov_3
+			has_authority = auth_corporate
 		}
-		NOT = { has_authority = auth_corporate }
 	}
 	
 	ai_weight = {
@@ -1308,11 +1302,11 @@ ap_esap_gov_GC_3 = {
 
 	potential = {
 		has_ethic = ethic_gestalt_consciousness
-		NOT = {
+		NOR = {
 			has_ascension_perk = ap_imperial_prerogative
 			has_ascension_perk = ap_esap_gov_GC_3
+			has_authority = auth_corporate
 		}
-		NOT = { has_authority = auth_corporate }
 	}
 	
 	ai_weight = {
@@ -2539,10 +2533,7 @@ ap_esap_authoritarian_1 = {
 		NOT = {
 			has_ascension_perk = ap_esap_authoritarian_1
 		}
-		OR = {
-			has_ethic = ethic_authoritarian
-			has_ethic = ethic_fanatic_authoritarian
-		}
+		is_authoritarian = yes
 	}
 	
 	ai_weight = {
@@ -2577,10 +2568,7 @@ ap_esap_egalitarian_1 = {
 		NOT = {
 			has_ascension_perk = ap_esap_egalitarian_1
 		}
-		OR = {
-			has_ethic = ethic_egalitarian
-			has_ethic = ethic_fanatic_egalitarian
-		}
+		is_egalitarian = yes
 	}
 	
 	ai_weight = {
@@ -2592,10 +2580,10 @@ ap_esap_egalitarian_1 = {
 ap_nihilistic_acquisition = {
 	potential = {
 		host_has_dlc = "Apocalypse"
-		NOT = {
+		NOR = {
 			has_ascension_perk = ap_nihilistic_acquisition
+			has_valid_civic = civic_barbaric_despoilers
 		}
-		NOT = { has_valid_civic = civic_barbaric_despoilers }
 	}
 
 	on_enabled = {
@@ -2654,10 +2642,7 @@ ap_esap_xenophile_1 = {
 		NOT = {
 			has_ascension_perk = ap_esap_xenophile_1
 		}
-		OR = {
-			has_ethic = ethic_xenophile
-			has_ethic = ethic_fanatic_xenophile
-		}
+		is_xenophile = yes
 	}
 	
 	ai_weight = {
@@ -2701,10 +2686,7 @@ ap_esap_militarist_1 = {
 		NOT = {
 			has_ascension_perk = ap_esap_militarist_1
 		}
-		OR = {
-			has_ethic = ethic_militarist
-			has_ethic = ethic_fanatic_militarist
-		}
+		is_militarist = yes
 	}
 	
 	ai_weight = {
@@ -2733,10 +2715,7 @@ ap_esap_pacifist_1 = {
 		NOT = {
 			has_ascension_perk = ap_esap_pacifist_1
 		}
-		OR = {
-			has_ethic = ethic_pacifist
-			has_ethic = ethic_fanatic_pacifist
-		}
+		is_pacifist = yes
 	}
 	
 	ai_weight = {
@@ -2767,10 +2746,7 @@ ap_esap_materialist_1 = {
 		NOT = {
 			has_ascension_perk = ap_esap_materialist_1
 		}
-		OR = {
-			has_ethic = ethic_materialist
-			has_ethic = ethic_fanatic_materialist
-		}
+		is_materialist = yes
 	}
 	
 	ai_weight = {
@@ -2788,10 +2764,7 @@ ap_consecrated_worlds = {
 		NOT = {
 			has_ascension_perk = ap_consecrated_worlds
 		}
-		OR = {
-			has_ethic = ethic_spiritualist
-			has_ethic = ethic_fanatic_spiritualist
-		}
+		is_spiritualist = yes
 	}
 
 	ai_weight = {
@@ -3335,10 +3308,8 @@ ap_become_the_crisis = {
 			is_galactic_emperor = no
 		}
 		NOR = {
-			has_ethic = ethic_xenophile
-			has_ethic = ethic_fanatic_xenophile
-			has_ethic = ethic_pacifist
-			has_ethic = ethic_fanatic_pacifist
+			is_xenophile = yes
+			is_pacifist = yes
 			has_civic = civic_machine_servitor
 		}
 	}
@@ -3772,10 +3743,10 @@ ap_world_shaper = {
 	}
 
 	potential = {
-		NOT = {
+		NOR = {
 			has_ascension_perk = ap_world_shaper
+			has_authority = auth_hive_mind
 		}
-		NOT = { has_authority = auth_hive_mind }
 		OR = {
 			NOT = { has_authority = auth_machine_intelligence }
 			has_valid_civic = civic_machine_servitor
@@ -3958,8 +3929,6 @@ ap_shared_destiny = {
 			has_valid_civic = civic_inwards_perfection
 			has_valid_civic = civic_machine_terminator
 			has_authority = auth_corporate
-		}
-		NOT = {
 			has_ascension_perk = ap_shared_destiny
 		}
 	}
@@ -4039,10 +4008,8 @@ ap_galactic_contender = {
 		}
 		any_relation = {
 			has_communications = root
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 		}
 	}
 
