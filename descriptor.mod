@@ -3,6 +3,6 @@ tags={
 	"Gameplay"
 }
 picture="thumbnail.png"
-supported_version="3.2.*"
+supported_version="3.2.2"
 path="C:/Users/admin/Documents/Paradox Interactive/Stellaris/mod/esap"
 remote_file_id="1067631798"
